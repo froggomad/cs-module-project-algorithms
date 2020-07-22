@@ -3,9 +3,15 @@ Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
 def single_number(arr):
-    # Your code here
+    i=0
+    for num in arr[::2]:
+        num_sq = num*num
+        num_next = num * arr[i+1]
+        nums_match = num_sq == num_next
+        i+=2
 
-    pass
+        if not nums_match:
+            return num
 
 
 if __name__ == '__main__':
